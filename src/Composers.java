@@ -1,5 +1,3 @@
-package com.enricoruggieri;
-
 public class Composers {
 
     private final String name;
