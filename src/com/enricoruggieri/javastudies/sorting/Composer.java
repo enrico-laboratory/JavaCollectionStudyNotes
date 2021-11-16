@@ -1,11 +1,13 @@
-public class Composers {
+package com.enricoruggieri.javastudies.sorting;
+
+public class Composer {
 
     private final String name;
     private final String placeOfBirth;
     private final int birthYear;
     private final int deathYear;
 
-    public Composers(String name, String placeOfBirth, int birthYear, int deathYear) {
+    public Composer(String name, String placeOfBirth, int birthYear, int deathYear) {
         if ( birthYear < 1500 || birthYear > 1700  ) {
             throw new IllegalArgumentException("Invalid year of birth");
         }
@@ -42,7 +44,7 @@ public class Composers {
 
     @Override
     public String toString() {
-        return "Composers{" +
+        return "Event{" +
                 "name='" + name + '\'' +
                 ", placeOfBirth='" + placeOfBirth + '\'' +
                 ", birthYear=" + birthYear +

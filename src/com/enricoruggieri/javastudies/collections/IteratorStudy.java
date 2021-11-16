@@ -1,3 +1,5 @@
+package com.enricoruggieri.javastudies.collections;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -24,9 +26,8 @@ public class IteratorStudy {
 
         System.out.println("++++++ Iterator ++++++");
 
-        Iterator<Composers> iterator = romanSchoolComposers.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+        for (Composers romanSchoolComposer : romanSchoolComposers) {
+            System.out.println(romanSchoolComposer);
         }
         System.out.println("++++++ Iterator (for-each) ++++++");
 

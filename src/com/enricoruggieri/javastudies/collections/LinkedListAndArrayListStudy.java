@@ -1,3 +1,5 @@
+package com.enricoruggieri.javastudies.collections;
+
 import java.util.*;
 
 public class LinkedListAndArrayListStudy {
@@ -51,13 +53,13 @@ public class LinkedListAndArrayListStudy {
 
 
         System.out.println("+++++ toString, get 0, set 3, toString ++++");
-        System.out.println(romanSchoolComposers.toString());
+        System.out.println(romanSchoolComposers);
         // get is inefficient for linked list, has to traverse the entire list,
         // better an array to retrieve element knowing the index
         // STAY AWAY FROM METHODS WHICH USE INDEX WITH LINKEDLISTS.
         System.out.println(romanSchoolComposers.get(0));
         romanSchoolComposers.set(2, anerio);
-        System.out.println(romanSchoolComposers.toString());
+        System.out.println(romanSchoolComposers);
 
         System.out.println("++++++ To array ++++++");
         Composers[] romanSchoolComposersArray = new Composers[romanSchoolComposers.size()];
