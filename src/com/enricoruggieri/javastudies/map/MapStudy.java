@@ -2,7 +2,7 @@ package com.enricoruggieri.javastudies.map;
 
 import java.util.*;
 
-public class MapTest {
+public class MapStudy {
 
     public static void main(String[] args) {
         Map<String, String> languages = new HashMap<>();
