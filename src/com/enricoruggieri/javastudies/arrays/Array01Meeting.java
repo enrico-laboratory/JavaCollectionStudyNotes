@@ -7,12 +7,12 @@ import java.util.*;
 *
  */
 
-public class Meeting {
+public class Array01Meeting {
 
     private int startTime;
     private int endTime;
 
-    public Meeting(int startTime, int endTime) {
+    public Array01Meeting(int startTime, int endTime) {
         // number of 30 min blocks past 9:00 am
         this.startTime = startTime;
         this.endTime   = endTime;
@@ -43,7 +43,7 @@ public class Meeting {
     }
 
 
-    public static List<Meeting> mergeTry(List<Meeting> meetingList) {
+    public static List<Array01Meeting> mergeTry(List<Array01Meeting> meetingList) {
         // sort the meeting traditional way
 //        meetingList.sort(new Comparator<Meeting>() {
 //            @Override
@@ -56,10 +56,10 @@ public class Meeting {
 //        meetingList.sort((first, second) -> first.getStartTime() - second.getStartTime());
 
         // sorting using Comparator
-        meetingList.sort(Comparator.comparingInt(Meeting::getStartTime));
+        meetingList.sort(Comparator.comparingInt(Array01Meeting::getStartTime));
 
-        Meeting unmergedMeeting = meetingList.get(0);
-        List<Meeting> newMeetingList = new ArrayList<>(meetingList.size());
+        Array01Meeting unmergedMeeting = meetingList.get(0);
+        List<Array01Meeting> newMeetingList = new ArrayList<>(meetingList.size());
 
         // merge the meeting
         for (int i = 1; i < meetingList.size(); i++) {
@@ -68,7 +68,7 @@ public class Meeting {
                         meetingList.get(i));
                 int meetingStaringTime = unmergedMeeting.getStartTime();
                 int meetingEndingTime = Math.max(unmergedMeeting.getEndTime(), meetingList.get(i).getEndTime());
-                unmergedMeeting = new Meeting(
+                unmergedMeeting = new Array01Meeting(
                         meetingStaringTime,
                         meetingEndingTime);
 
@@ -84,18 +84,18 @@ public class Meeting {
         return newMeetingList;
     }
 
-    public static List<Meeting> mergeSolution (List<Meeting> meetingList) {
+    public static List<Array01Meeting> mergeSolution (List<Array01Meeting> meetingList) {
         // sorting list
-        meetingList.sort(Comparator.comparingInt(Meeting::getStartTime));
+        meetingList.sort(Comparator.comparingInt(Array01Meeting::getStartTime));
 
 
         // initialize mergedMeetings with the earliest meeting
-        List<Meeting> mergedMeetings = new ArrayList<>();
+        List<Array01Meeting> mergedMeetings = new ArrayList<>();
         mergedMeetings.add(meetingList.get(0));
 
-        for (Meeting currentMeeting : meetingList) {
+        for (Array01Meeting currentMeeting : meetingList) {
 
-            Meeting lastMergedMeeting = mergedMeetings.get(mergedMeetings.size() - 1);
+            Array01Meeting lastMergedMeeting = mergedMeetings.get(mergedMeetings.size() - 1);
             System.out.println("Last merged meeting: " + lastMergedMeeting);
 
             // if the current meeting overlaps with the last merged meeting, use the
@@ -120,16 +120,16 @@ public class Meeting {
     }
 
     public static void main(String[] args) {
-        Meeting meeting1 = new Meeting(0, 1);
-        Meeting meeting2 = new Meeting(3, 5);
-        Meeting meeting3 = new Meeting(4, 8);
-        Meeting meeting4 = new Meeting(10, 12);
-        Meeting meeting5 = new Meeting(9, 10);
-        Meeting meeting6 = new Meeting(56, 90);
-        Meeting meeting7 = new Meeting(67, 78);
-        Meeting meeting8 = new Meeting(100, 103);
-        Meeting meeting9 = new Meeting(16 , 25);
-        Meeting meeting10 = new Meeting(3, 87);
+        Array01Meeting meeting1 = new Array01Meeting(0, 1);
+        Array01Meeting meeting2 = new Array01Meeting(3, 5);
+        Array01Meeting meeting3 = new Array01Meeting(4, 8);
+        Array01Meeting meeting4 = new Array01Meeting(10, 12);
+        Array01Meeting meeting5 = new Array01Meeting(9, 10);
+        Array01Meeting meeting6 = new Array01Meeting(56, 90);
+        Array01Meeting meeting7 = new Array01Meeting(67, 78);
+        Array01Meeting meeting8 = new Array01Meeting(100, 103);
+        Array01Meeting meeting9 = new Array01Meeting(16 , 25);
+        Array01Meeting meeting10 = new Array01Meeting(3, 87);
 
 //        Meeting meeting1 = new Meeting(1, 10);
 //        Meeting meeting2 = new Meeting(2, 5);
@@ -137,7 +137,7 @@ public class Meeting {
 //        Meeting meeting4 = new Meeting(5, 9);
 
 
-        List<Meeting> meetingList = new ArrayList<>();
+        List<Array01Meeting> meetingList = new ArrayList<>();
         meetingList.add(meeting1);
         meetingList.add(meeting2);
         meetingList.add(meeting3);
@@ -150,9 +150,9 @@ public class Meeting {
         meetingList.add(meeting10);
 
 
-        List<Meeting> mergedMeetings = mergeSolution(meetingList);
+        List<Array01Meeting> mergedMeetings = mergeSolution(meetingList);
 
-        for (Meeting meeting : mergedMeetings) {
+        for (Array01Meeting meeting : mergedMeetings) {
             System.out.println(meeting);
         }
 
